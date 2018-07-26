@@ -1,2 +1,2 @@
-include ':app', ':dev1'
+include ':app', ':dev1', ':savedata'
 include ':app', ':twoactivity'
