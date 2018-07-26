@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TwoActivity</string>
+    <string name="customers_info">Customer`s info:</string>
+    <string name="fio">Please, enter name and surname</string>
+    <string name="age">Please, enter you age</string>
+    <string name="cash">Please, enter how much money the customer has</string>
+    <string name="enter_data">Enter data</string>
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="fio_error">"FIO can`t be empty"</string>
+    <string name="age_error">"Age can`t be empty"</string>
+    <string name="cash_error">"Cash can`t be empty"</string>
+</resources>
