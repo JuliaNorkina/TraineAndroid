@@ -31,9 +31,9 @@ public class ActivityD extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bBefore:
-                Intent intentC = new Intent(this, ActivityC.class);
-                intentC.putExtra(STACK, "C -> B -> A");
-                startActivity(intentC);
+                Intent intentB = new Intent(this, ActivityB.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intentB.putExtra(STACK, " B -> A");
+                startActivity(intentB);
                 break;
             case R.id.bNext:
                 Toast.makeText(this, "No more Activity",Toast.LENGTH_SHORT).show();
