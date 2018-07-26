@@ -16,6 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GoodPictureActivity"
+            android:label="Good Picture">
+            <intent-filter>
+                <action android:name="com.example.dev1.SHOW_PICTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".BadPictureActivity" android:label="Bad Picture">
+            <intent-filter>
+                <action android:name="com.example.dev1.SHOW_PICTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
