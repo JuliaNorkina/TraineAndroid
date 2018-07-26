@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tvInfo;
     public static final String CUSTOMERS_DATA = "Customers data";
-    private final int REQUEST_CODE = 1;
+    private static final int REQUEST_CODE = 1;
+    private TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

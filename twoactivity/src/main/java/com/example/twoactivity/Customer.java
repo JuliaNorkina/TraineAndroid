@@ -5,19 +5,19 @@ import android.os.Parcelable;
 
 public class Customer implements Parcelable {
     private String fio;
-    private int age;
-    private int cash;
+    private String age;
+    private String cash;
 
-    public Customer(String fio, int age, int cash) {
+    Customer(String fio, String age, String cash) {
         this.fio = fio;
         this.age = age;
         this.cash = cash;
     }
 
-    public Customer(Parcel in) {
+    private Customer(Parcel in) {
         fio = in.readString();
-        age = in.readInt();
-        cash = in.readInt();
+        age = in.readString();
+        cash = in.readString();
     }
 
     public static final Creator<Customer> CREATOR = new Creator<Customer>() {
@@ -40,8 +40,8 @@ public class Customer implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(fio);
-        dest.writeInt(age);
-        dest.writeInt(cash);
+        dest.writeString(age);
+        dest.writeString(cash);
     }
 
     @Override

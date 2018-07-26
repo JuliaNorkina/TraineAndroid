@@ -1,34 +1,32 @@
 package com.example.twoactivity;
 
 public class Validator {
-    private boolean fio;
-    private boolean age;
-    private boolean cash;
+    private String fioError;
+    private String ageError;
+    private String cashError;
 
-    private Validator(boolean fio, boolean age, boolean cash) {
-        this.fio = fio;
-        this.age = age;
-        this.cash = cash;
+    Validator(String fioError, String ageError, String cashError) {
+        this.fioError = fioError;
+        this.ageError = ageError;
+        this.cashError = cashError;
     }
 
-    Validator() {}
-
-    public Validator valid(String fio, String age, String cash){
-        this.fio = !fio.equals("");
-        this.age = !age.equals("");
-        this.cash = !cash.equals("");
-        return new Validator(this.fio,this.age,this.cash);
+    public boolean valid(String fio, String age, String cash) {
+        if (!fio.equals("")) fioError = "";
+        if (!age.equals("")) ageError = "";
+        if (!cash.equals("")) cashError = "";
+        return !fio.equals("") && !age.equals("") && !cash.equals("");
     }
 
-    public boolean isFio() {
-        return fio;
+    public String getFioError() {
+        return fioError;
     }
 
-    public boolean isAge() {
-        return age;
+    public String getAgeError() {
+        return ageError;
     }
 
-    public boolean isCash() {
-        return cash;
+    public String getCashError() {
+        return cashError;
     }
 }

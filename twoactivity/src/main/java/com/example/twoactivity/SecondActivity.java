@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
@@ -33,20 +34,19 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bSave:
-                Validator validator = new Validator().valid(etFio.getText().toString(),etAge.getText().toString(),etCash.getText().toString());
-
-                if (!validator.isFio()){
-                    etFio.setError("FIO can`t be empty");
-                } else if (!validator.isAge()) {
-                    etAge.setError("Age can`t be empty");
-                } else if (!validator.isCash()){
-                    etCash.setError("Cash can`t be empty");
-                } else {
-                    Customer customer = new Customer(etFio.getText().toString(), Integer.parseInt(etAge.getText().toString()), Integer.parseInt(etCash.getText().toString()));
+                Validator validator = new Validator(getString(R.string.fio_error), getString(R.string.age_error), getString(R.string.cash_error));
+                if (validator.valid(etFio.getText().toString(), etAge.getText().toString(), etCash.getText().toString())) {
+                    Customer customer = new Customer(etFio.getText().toString(), etAge.getText().toString(), etCash.getText().toString());
                     customers.add(customer);
                     etFio.setText("");
                     etAge.setText("");
                     etCash.setText("");
+                } else if (!validator.getFioError().equals("")) {
+                    etFio.setError(validator.getFioError());
+                } else if (!validator.getAgeError().equals("")) {
+                    etAge.setError(validator.getAgeError());
+                } else if (!validator.getCashError().equals("")) {
+                    etCash.setError(validator.getCashError());
                 }
                 break;
             case R.id.bOk:
