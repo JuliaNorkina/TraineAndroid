@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TwoActivity</string>
+    <string name="fio_age">FIO, age</string>
+    <string name="fio">Please, enter name and surname</string>
+    <string name="age">Please, enter you age</string>
+    <string name="enter_data">Enter data</string>
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="cash">Please, enter how much money the customer has</string>
 </resources>
