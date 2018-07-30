@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityD extends AppCompatActivity implements View.OnClickListener{
+public class ActivityD2 extends AppCompatActivity implements View.OnClickListener{
 
     private static final String STACK = "Stack";
     @Override
@@ -31,12 +31,14 @@ public class ActivityD extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bBefore:
-                Intent intentB = new Intent(this, ActivityB.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intentB.putExtra(STACK, " B -> A");
+                Intent intentB = new Intent(this, ActivityC2.class);
+                intentB.putExtra(STACK, " C -> B -> A");
                 startActivity(intentB);
                 break;
             case R.id.bNext:
-                Toast.makeText(this, "No more Activity",Toast.LENGTH_SHORT).show();
+                Intent intentA = new Intent(this, ActivityA2.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intentA.putExtra(STACK, "A -> B (new task) -> C -> D -> A (old instance)");
+                startActivity(intentA);
                 break;
         }
     }

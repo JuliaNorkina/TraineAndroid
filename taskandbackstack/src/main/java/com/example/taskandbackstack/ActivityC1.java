@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ActivityB extends AppCompatActivity implements View.OnClickListener{
+public class ActivityC1 extends AppCompatActivity implements View.OnClickListener{
 
     private static final String STACK = "Stack";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_b);
+        setContentView(R.layout.activity_c);
 
         TextView tvStack = findViewById(R.id.tvStack);
         Button bBefore = findViewById(R.id.bBefore);
@@ -31,13 +31,14 @@ public class ActivityB extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bBefore:
-                Intent intentA = new Intent(this, ActivityA.class);
-                startActivity(intentA);
+                Intent intentB = new Intent(this, ActivityB1.class);
+                intentB.putExtra(STACK, "B -> A ");
+                startActivity(intentB);
                 break;
             case R.id.bNext:
-                Intent intentC = new Intent(this, ActivityC.class);
-                intentC.putExtra(STACK, "A -> B -> C");
-                startActivity(intentC);
+                Intent intentD = new Intent(this, ActivityD1.class);
+                intentD.putExtra(STACK, "A -> B -> C -> D");
+                startActivity(intentD);
                 break;
         }
     }

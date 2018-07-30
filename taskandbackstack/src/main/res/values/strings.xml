@@ -7,4 +7,7 @@
     <string name="activity_b">I am activity B</string>
     <string name="activity_c">I am activity C</string>
     <string name="activity_d">I am activity D</string>
+    <string name="choose_script">Please, choose a script</string>
+    <string name="first_script">First script</string>
+    <string name="second_script">Second script</string>
 </resources>

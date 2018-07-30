@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityA extends AppCompatActivity implements View.OnClickListener {
+public class ActivityA2 extends AppCompatActivity implements View.OnClickListener {
 
     public static final String STACK = "Stack";
 
@@ -34,8 +34,8 @@ public class ActivityA extends AppCompatActivity implements View.OnClickListener
                 Toast.makeText(this, "It is root Activity", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bNext:
-                Intent intentA = new Intent(this, ActivityB.class);
-                intentA.putExtra(STACK, "A -> B");
+                Intent intentA = new Intent(this, ActivityB2.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intentA.putExtra(STACK, "A -> B (new task)");
                 startActivity(intentA);
                 break;
         }
