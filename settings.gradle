@@ -1,2 +1,2 @@
-include ':app', ':dev1', ':savedata', ':taskandbackstack', ':nativecamera'
+include ':app', ':dev1', ':savedata', ':taskandbackstack', ':nativecamera', ':fragments'
 include ':app', ':twoactivity'
