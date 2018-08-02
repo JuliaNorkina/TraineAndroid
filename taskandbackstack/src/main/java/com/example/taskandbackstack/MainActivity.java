@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.bSecond:
-                Intent intent1 = new Intent(this, ActivityA2.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent1 = new Intent(this, ActivityA2.class);
                 startActivity(intent1);
                 break;
         }

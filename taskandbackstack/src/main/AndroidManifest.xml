@@ -22,7 +22,7 @@
         <activity android:name=".ActivityD1" />
         <activity android:name=".ActivityA2" />
         <activity android:name=".ActivityC2" />
-        <activity android:name=".ActivityB2" />
+        <activity android:name=".ActivityB2" android:launchMode="singleTask" android:taskAffinity=""/>
         <activity android:name=".ActivityD2" />
     </application>
 

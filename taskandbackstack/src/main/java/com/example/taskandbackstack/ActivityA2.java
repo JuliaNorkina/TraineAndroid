@@ -34,7 +34,7 @@ public class ActivityA2 extends AppCompatActivity implements View.OnClickListene
                 Toast.makeText(this, "It is root Activity", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bNext:
-                Intent intentA = new Intent(this, ActivityB2.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intentA = new Intent(this, ActivityB2.class);
                 intentA.putExtra(STACK, "A -> B (new task)");
                 startActivity(intentA);
                 break;
