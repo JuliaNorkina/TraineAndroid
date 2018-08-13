@@ -10,4 +10,5 @@
     <string name="choose_script">Please, choose a script</string>
     <string name="first_script">First script</string>
     <string name="second_script">Second script</string>
+    <string name="root_activity">It is root Activity</string>
 </resources>

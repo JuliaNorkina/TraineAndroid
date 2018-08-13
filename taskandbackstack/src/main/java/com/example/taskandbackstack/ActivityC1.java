@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ActivityC1 extends AppCompatActivity implements View.OnClickListener{
-
-    private static final String STACK = "Stack";
+public class ActivityC1 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +22,20 @@ public class ActivityC1 extends AppCompatActivity implements View.OnClickListene
         bNext.setOnClickListener(this);
 
         Intent intent = getIntent();
-        tvStack.setText(intent.getStringExtra(STACK));
+        tvStack.setText(intent.getStringExtra(Singleton.getSTACK()));
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bBefore:
                 Intent intentB = new Intent(this, ActivityB1.class);
-                intentB.putExtra(STACK, "B -> A ");
+                intentB.putExtra(Singleton.getSTACK(), "B -> A ");
                 startActivity(intentB);
                 break;
             case R.id.bNext:
                 Intent intentD = new Intent(this, ActivityD1.class);
-                intentD.putExtra(STACK, "A -> B -> C -> D");
+                intentD.putExtra(Singleton.getSTACK(), "A -> B -> C -> D");
                 startActivity(intentD);
                 break;
         }

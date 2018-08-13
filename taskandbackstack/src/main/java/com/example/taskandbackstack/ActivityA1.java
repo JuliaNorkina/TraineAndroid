@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 public class ActivityA1 extends AppCompatActivity implements View.OnClickListener {
 
-    public static final String STACK = "Stack";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +29,11 @@ public class ActivityA1 extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bBefore:
-                Toast.makeText(this, "It is root Activity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.root_activity, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bNext:
                 Intent intentA = new Intent(this, ActivityB1.class);
-                intentA.putExtra(STACK, "A -> B");
+                intentA.putExtra(Singleton.getSTACK(), "A -> B");
                 startActivity(intentA);
                 break;
         }

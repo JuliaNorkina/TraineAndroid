@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 public class ActivityD2 extends AppCompatActivity implements View.OnClickListener{
 
-    private static final String STACK = "Stack";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +23,7 @@ public class ActivityD2 extends AppCompatActivity implements View.OnClickListene
         bNext.setOnClickListener(this);
 
         Intent intent = getIntent();
-        tvStack.setText(intent.getStringExtra(STACK));
+        tvStack.setText(intent.getStringExtra(Singleton.getSTACK()));
     }
 
     @Override
@@ -32,12 +31,12 @@ public class ActivityD2 extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()){
             case R.id.bBefore:
                 Intent intentB = new Intent(this, ActivityC2.class);
-                intentB.putExtra(STACK, " C -> B -> A");
+                intentB.putExtra(Singleton.getSTACK(), " C -> B -> A");
                 startActivity(intentB);
                 break;
             case R.id.bNext:
                 Intent intentA = new Intent(this, ActivityA2.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intentA.putExtra(STACK, "A -> B (new task) -> C -> D -> A (old instance)");
+                intentA.putExtra(Singleton.getSTACK(), "A -> B (new task) -> C -> D -> A (old instance)");
                 startActivity(intentA);
                 break;
         }
