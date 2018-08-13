@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NativeCamera</string>
+    <string name="camera">Camera</string>
+    <string name="other">Other</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="photo">photo from native camera</string>
+    <string name="send_email">Send email</string>
+    <string name="share_text">Share text</string>
+    <string name="phone">Open dialer</string>
+</resources>
