@@ -14,21 +14,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:buttonTint="@color/red" />
+            android:buttonTint="@color/cb_red" />
 
         <CheckBox
             android:id="@+id/cbGreen"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:buttonTint="@color/green"/>
+            android:buttonTint="@color/cb_green"/>
 
         <CheckBox
             android:id="@+id/cbBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:buttonTint="@color/blue"/>
+            android:buttonTint="@color/cb_blue"/>
     </LinearLayout>
 
     <FrameLayout
